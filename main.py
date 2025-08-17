@@ -1,9 +1,11 @@
 import telebot
 import requests
 from deep_translator import GoogleTranslator
+from dotenv import load_dotenv
+import os
 
-TOKEN = '7889841829:AAG5EP5hqIlk5cCOC5_ohjrcTszcPtuaOHQ'
-bot = telebot.TeleBot(TOKEN)
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 
 @bot.message_handler(commands = ['start'])
